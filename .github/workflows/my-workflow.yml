@@ -34,8 +34,17 @@ jobs:
   checkstyle:
     needs: build
     runs-on: ubuntu-latest
+    name: Checkstyle job
     steps:
-      - run: echo checkstyle
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Run check style
+        uses: nikitasavinov/checkstyle-action@master
+        with:
+          checkstyle_config: config/checkstyle/checkstyle.xml
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          reporter: 'github-pr-check'
+          tool_name: 'testtool'
 
   coverage:
     needs: build
