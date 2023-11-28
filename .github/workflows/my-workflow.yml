@@ -48,6 +48,8 @@ jobs:
   coverage:
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
     name: coverage
     steps:
       - name: Checkout
