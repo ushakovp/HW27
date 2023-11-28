@@ -51,6 +51,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     permissions:
+      repository-projects: read
       pull-requests: write
     name: coverage
     steps:
