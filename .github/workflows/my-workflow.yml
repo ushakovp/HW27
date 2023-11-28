@@ -29,7 +29,7 @@ jobs:
           gradle-version: 7.3
 
       - name: Execute Gradle build
-        run: ./gradlew build
+        run: gradle clean build
 
   checkstyle:
     needs: build
