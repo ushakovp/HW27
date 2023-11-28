@@ -68,6 +68,9 @@ jobs:
       - name: Execute Gradle jacocoTestReport
         run: gradle jacocoTestReport
 
+      - name: Show file tree
+        run: find . -type d | sed -e "s/[^-][^\/]*\//  |/g" -e "s/|\([^ ]\)/| - \1/"
+
       - name: Add coverage to PR
         id: jacoco
         uses: madrapps/jacoco-report@v1.6.1
