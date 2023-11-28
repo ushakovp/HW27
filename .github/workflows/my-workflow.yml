@@ -69,7 +69,7 @@ jobs:
         run: gradle jacocoTestReport
 
       - name: Show file tree
-        run: find . -type d | sed -e "s/[^-][^\/]*\//  |/g" -e "s/|\([^ ]\)/| - \1/"
+        run: ls build/reports/jacoco/test/html/
 
       - name: Add coverage to PR
         id: jacoco
