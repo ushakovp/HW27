@@ -2,7 +2,7 @@ name: Java CI with Gradle
 
 on:
   push:
-    branches: [ "master", "homework" ]
+    branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
   workflow_dispatch:
@@ -48,8 +48,6 @@ jobs:
   coverage:
     needs: build
     runs-on: ubuntu-latest
-    permissions:
-      pull-requests: write
     name: coverage
     steps:
       - name: Checkout
