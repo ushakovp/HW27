@@ -10,6 +10,7 @@ on:
 
 permissions:
   contents: read
+  pull-requests: write
 
 jobs:
   build:
@@ -34,8 +35,6 @@ jobs:
   checkstyle:
     needs: build
     runs-on: ubuntu-latest
-    permissions:
-      pull-requests: write
     name: Checkstyle job
     steps:
       - name: Checkout
@@ -50,9 +49,7 @@ jobs:
   coverage:
     needs: build
     runs-on: ubuntu-latest
-    permissions:
-      repository-projects: read
-      pull-requests: write
+
     name: coverage
     steps:
       - name: Checkout
