@@ -40,6 +40,7 @@ jobs:
           name: code-coverage
           path: |
             build/classes/java
+            !build/classes/java/test
             build/jacoco/test.exec
 
   checkstyle:
@@ -69,7 +70,7 @@ jobs:
         with:
           name: code-coverage
 
-      - run: ls classes
+      - run: ls classes/java
 
       - name: Setup Java 17
         uses: actions/setup-java@v3
