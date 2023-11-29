@@ -20,7 +20,6 @@ test {
     useJUnitPlatform()
     jacoco.includeNoLocationClasses = true
     jacoco.excludes = ['jdk.internal.*']
-    //finalizedBy jacocoTestReport
 }
 
 checkstyle {

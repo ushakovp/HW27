@@ -70,8 +70,6 @@ jobs:
         with:
           name: code-coverage
 
-      - run: ls classes/java
-
       - name: Setup Java 17
         uses: actions/setup-java@v3
         with:
@@ -95,4 +93,4 @@ jobs:
           title: Coverage Results
           update-comment: true
           min-coverage-overall: 80
-          min-coverage-changed-files: 60
+          min-coverage-changed-files: 80
