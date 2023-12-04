@@ -20,16 +20,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Setup Java 17
+      - name: Setup Java
         uses: actions/setup-java@v3
-        with:
-          distribution: temurin
-          java-version: 17
 
       - name: Setup Gradle
         uses: gradle/gradle-build-action@v2
-        with:
-          gradle-version: 7.3
 
       - name: Execute Gradle build
         run: gradle clean build jacocoTestReport
@@ -67,7 +62,7 @@ jobs:
         with:
           name: code-coverage
 
-        run: ls
+      - run: ls
 
       - name: Add coverage to PR
         id: jacoco
