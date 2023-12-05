@@ -26,13 +26,10 @@ jobs:
           distribution: temurin
           java-version: 17
 
-      - name: Setup Gradle
-        uses: gradle/gradle-build-action@v2
-        with:
-          gradle-version: 7.3
-
       - name: Execute Gradle build
-        run: gradle clean build jacocoTestReport
+        run: |
+          chmod +x gradlew
+          ./gradlew clean build jacocoTestReport
 
       - name: Archive coverage artifacts
         uses: actions/upload-artifact@v3
@@ -66,8 +63,6 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: code-coverage
-
-      - run: ls
 
       - name: Add coverage to PR
         id: jacoco
